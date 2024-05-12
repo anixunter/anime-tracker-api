@@ -4,6 +4,7 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 import { config } from "dotenv";
 config();
+const port = process.env.PORT || 3000;
 
 const { Pool } = pg;
 
@@ -191,6 +192,6 @@ app.delete("/users/:userId/animes/:animeId", async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("server is running on render");
 });
